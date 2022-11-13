@@ -48,6 +48,12 @@ app.get("/", function(req, res){
 app.get("/About", function(req, res){
     res.render("about", { About:aboutContent});
 });
+app.get("/society", function(req, res){
+    res.render("society");
+});
+app.get("/exam", function(req, res){
+    res.render("exam");
+});
 
 app.get("/Contact", function(req, res){
     res.render("contact", { Contact:ConContent});
