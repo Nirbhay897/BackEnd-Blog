@@ -12,11 +12,11 @@ app.use(bodyParser.urlencoded({extended:true}))
 app.use(express.static(__dirname + '/public'));
 
 
-const homeStartingContent = "nfuwefidsnvdbuds fewf9 m mfhew9 h gh e9wmh hm gh8 nig gnd ilm ewife g   gmuh gweiog heogimwehg vn dmovhn w d  v; srmgievmu m  mg mgm ;eowgifm m ghiog;sdovinm m ew iom moi m;f iehm ih;weiofhvidsovhnsdoivm  hfm ihf im h w;fwefihmfds mfhm"
+const homeStartingContent = "This is a blog page , you can write here, read other people posts and you yourself can add amazing stuff to this blog post the uploaded content can only be deleted by the creater of this blog , For adding the stuff, all you have to do is to click on the compose then you have to type the title and then the content related to it then you have to click on publish and then your article is published"
 
-const aboutContent = "kfnk fkefmkm fmeow mfkm femm fkmfk ek fmkfmkg mgem regm erglm rk erm gerkigmeriogermg;oigmfiogersg;eoi gherj gue.rgn ugilern gergi; erngioeh;n ig n;g ;ngre iogrng eifewnew ;foi go enwfio ewgnd osjg.ngegunef nge;gneiroeg gi ngire n"
+const aboutContent = "I have made this project with nodejs, express.js, mongodb, EJS tempelate, and several pakages, this is one of my amazing projects which I have made, while taking a Online course, I have added few things to it , on the basis of what I have learned in that course, I believe in learning by building projects"
 
-const ConContent = "kfnk fkefmkm fmeow mfkm femm fkmfk ek fmkfmkg mgem regm erglm rk erm gerkigmeriogermg;oigmfiogersg;eoi gherj gue.rgn ugilern gergi; erngioeh;n ig n;g ;ngre iogrng eifewnew ;foi go enwfio ewgnd osjg.ngegunef nge;gneiroeg gi ngire n"
+const ConContent = "I am Nirbhay, 2nd year COE student at DTU, currently knows technologies like Nodejs, Express.js, React.js, MongoDB, EJS tempelates, Feel free to connect on linkeIn: https://www.linkedin.com/in/nirbhay-gupta-762143226 , Insta: nirbhaygupta80 "
 
 
 // connecting to the new database 
