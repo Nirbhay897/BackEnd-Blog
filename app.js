@@ -92,7 +92,11 @@ app.get("/posts/:postId", function(req,res){
     });
 });
 
+let port = process.env.PORT;
+if(port == null || port == ""){
+    port = 3000;
+}
 
-app.listen(3001, function(){
-    console.log("port is running at 3001")
+app.listen(port , function(){
+    console.log("Server has started")
 });
