@@ -1,10 +1,21 @@
+body{
+    /* font-family: inherit; */
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+h1{
+    margin-top: 0.67em;
+    margin-right: 0px;
+    margin-bottom: 0.67em;
+    margin-left: 0px;
+}
 html {
     min-height: 100%;
     position: relative;
   }
   .container-fluid {
-      padding-top: 70px;
-      padding-bottom: 70px;
+      padding-top: 15px;
+      padding-bottom: 15px;
   }
   .navbar {
       padding-top: 15px;
@@ -12,8 +23,8 @@ html {
       border: 0;
       border-radius: 0;
       margin-bottom: 0;
-      font-size: 12px;
-      letter-spacing: 5px;
+      font-size: 15px;
+      letter-spacing: 2px;
   }
   .navbar-nav  li a:hover {
       color: #1abc9c !important;
@@ -37,3 +48,40 @@ html {
       font-size: 12px;
     color: #fff;
   }
+
+  /* @media (min-width: 992px) */
+ .navbar-expand-lg .navbar-nav .nav-link {
+    padding-right: 0.7rem;
+    padding-left: 0.7rem;
+}
+
+.navbar-expand-lg .navbar-collapse {
+    display: flex!important;
+    flex-basis: auto;
+    justify-content: flex-end;
+}
+
+.form-control {
+    display: block;
+    width: 100%;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+label {
+    display: inline-block;
+    max-width: 100%;
+    margin-bottom: 5px;
+    font-weight: 700;
+}

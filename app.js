@@ -64,12 +64,13 @@ app.post("/compose", function(req, res){
     const post = new Post({
         title: req.body.postTitle,
         content: req.body.postBody,
-        type: req.body.type
+        type: req.body.postType
     });
+
     post.save(function(err){
         if(!err){
-            res.redirect("/");
-            console.log("saved to db");
+                res.redirect("/");
+                console.log("saved to home db");  
         }
     });
 });

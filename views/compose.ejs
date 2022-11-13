@@ -8,14 +8,16 @@
 
             <label>Post</label>
             <textarea class="form-control" name="postBody" id="" cols="30" rows="5"></textarea>
+
+            <label>Type</label>
+            <select type="text" name="postType" class="form-control">
+                <option selected>Choose...</option>
+                <option value="1">Society</option>
+                <option value="2">Exam</option>
+                <option value="3">General</option>
+              </select>
         </div>
-        <!-- <label>Type</label>
-        <select name="type">
-            <option value="Society-talk">Society talk</option>
-            <option value="General-talk">General talk</option>
-            <option value="Exam-talk">Exam talk</option>
-        </select> -->
-        <button type="submit" class="btn btn-primary" name="button">Publish</button>
+        <button type="submit" class="btn btn-primary" style="margin-top: 15px;" name="button">Publish</button>
 
     </form>
 
