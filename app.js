@@ -25,11 +25,14 @@ mongoose.connect("mongodb+srv://NirbhayGupta:Nirbhay1234@cluster0.xqbm8tg.mongod
 // creating schema for posts
 const postSchema = {
     title: String,
-    content: String
+    content: String,
+    type: Number
 };
 
 // creating a new model
 const Post = mongoose.model("Post", postSchema);
+const PostSo = mongoose.model("PostSo", postSchema);
+const PostE = mongoose.model("PostE", postSchema);
 
 
 
@@ -48,11 +51,31 @@ app.get("/", function(req, res){
 app.get("/About", function(req, res){
     res.render("about", { About:aboutContent});
 });
+
+
 app.get("/society", function(req, res){
-    res.render("society");
+
+    PostSo.find({}, function(err, postSos){
+
+        if(err){
+            console.log(err);
+        }
+        else{
+         res.render("society", {postSos:postSos});
+        }
+    })
 });
 app.get("/exam", function(req, res){
-    res.render("exam");
+
+    PostE.find({}, function(err, postEs){
+
+        if(err){
+            console.log(err);
+        }
+        else{
+         res.render("exam", {postEs:postEs});
+        }
+    })
 });
 
 app.get("/Contact", function(req, res){
@@ -66,19 +89,56 @@ app.get("/compose", function(req, res){
 
 app.post("/compose", function(req, res){
 
-    // creating new posts
-    const post = new Post({
-        title: req.body.postTitle,
-        content: req.body.postBody,
-        type: req.body.postType
-    });
+    var type = req.body.tom
+    console.log(type);
 
-    post.save(function(err){
-        if(!err){
-                res.redirect("/");
-                console.log("saved to home db");  
-        }
-    });
+    if(type == 3){
+
+        const post = new Post({
+            title: req.body.postTitle,
+            content: req.body.postBody,
+        });
+        
+        post.save(function(err){
+            if(!err){
+                    res.redirect("/");
+                    console.log("saved to home db");  
+            }
+        });
+    }
+
+    else if(type == 1){
+
+        const postSo = new PostSo({
+            title: req.body.postTitle,
+            content: req.body.postBody,
+        });
+
+        postSo.save(function(err){
+            if(err){
+                     
+                    console.log(err);
+            }
+            else{
+                res.redirect("/society");
+                console.log("saved to home db"); 
+            }
+        });
+    }
+    else if(type == 2){
+
+        const postE = new PostE({
+            title: req.body.postTitle,
+            content: req.body.postBody,
+        });
+
+        postE.save(function(err){
+            if(!err){
+                    res.redirect("/exam");
+                    console.log("saved to home db");  
+            }
+        });
+    }
 });
 
 // express routing parameters
@@ -93,11 +153,47 @@ app.get("/posts/:postId", function(req,res){
         else{
             res.render("post", {
                 dynamic:post.title,
-                dynamicContent:post.content
+                dynamicContent:post.content,
+             });
+        }
+    });
+
+});
+
+app.get("/postSos/:postSoId", function(req,res){
+
+    const getId = req.params.postSoId;
+
+    PostS.findOne({_id:getId}, function(err, postSo){
+        if(err){
+            console.log(err);
+        }
+        else{
+            res.render("postSo", {
+                dynamic:postSo.title,
+                dynamicContentS:postSo.content,
              });
         }
     });
 });
+
+app.get("/postEs/:postEId", function(req,res){
+
+    const getId = req.params.postEId;
+
+    PostE.findOne({_id:getId}, function(err, postE){
+        if(err){
+            console.log(err);
+        }
+        else{
+            res.render("postE", {
+                dynamic:postE.title,
+                dynamicContentE:postE.content,
+             });
+        }
+    });
+});
+
 
 let port = process.env.PORT;
 if(port == null || port == ""){

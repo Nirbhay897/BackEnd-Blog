@@ -1,4 +1,12 @@
 <%-include("partials/header"); -%>
 <h1>Exam Talks</h1>
 
+<%postEs.forEach(function(postE){%>
+    <h1><%=postE.title%></h1>
+    <p>
+        <%=postE.content.substring(0,100)+ "..." %>
+        <a href="/postEs/<%=postE._id%>">Read More</a>
+    </p>
+<%})%>
+
 <%-include("partials/footer"); -%>
